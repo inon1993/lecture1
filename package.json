@@ -8,5 +8,6 @@
     "run-program": "node index.js"
   },
   "author": "Inon Avramashvili",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }

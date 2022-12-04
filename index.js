@@ -1,6 +1,22 @@
-let x = 0;
-while (x < 100) {
-    console.log(x, x++);
+import {writeFile, readFile} from "node:fs";
+import { exit } from "node:process";
+
+const me = {
+    firstname: "Inon",
+    lastname: "Avramashvili",
+    age: 29
 }
 
-console.log("Hello world");
+writeFile("./me.json", JSON.stringify(me), (error) => {
+    if(error) {
+        console.lerrorog(error);
+        exit(1)
+    }
+    readFile("./me.json", (error, data) => {
+        if(error) {
+          console.error(error);
+        exit(2);  
+        }
+        console.log(JSON.parse(data));
+    });
+})
